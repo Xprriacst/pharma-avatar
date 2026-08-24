@@ -1,0 +1,47 @@
+{
+  "_doc": "Declinaisons du master retenu. TOUJOURS lancer avec --ref out/master.png : c'est l'image de reference qui force 'meme personne, meme visage'. Sans --ref, Gemini regenere quelqu'un d'autre.",
+  "_common": "Keep the exact same woman as in the reference image: identical face, identical bone structure, identical eye colour, identical hairstyle and hair colour, identical age. Do not restyle, do not beautify, do not change her apparent age. Same photographic treatment: 85mm lens, shallow depth of field, soft natural light from the left, photorealistic skin texture.",
+  "_negative": "No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur.",
+  "derivatives": [
+    {
+      "id": "plain-bg",
+      "name": "fond-uni-gris-chaud",
+      "note": "La version passe-partout : slides, site, miniatures, incrustation.",
+      "aspectRatio": "4:5",
+      "imageSize": "2K",
+      "prompt": "Same person, same face, same outfit as the reference. Replace the background with a clean seamless warm grey studio backdrop (#D8D3CC), evenly lit, subtle soft vignette, no props, no texture. Keep the same head size and framing (head and shoulders)."
+    },
+    {
+      "id": "wide",
+      "name": "16-9-horizontal",
+      "note": "Base des videos web / emails. Sujet decale a droite pour laisser de la place au texte a gauche.",
+      "aspectRatio": "16:9",
+      "imageSize": "2K",
+      "prompt": "Same person, same face, same outfit, same background environment as the reference. Recompose as a horizontal 16:9 frame: the subject occupies the right third, head and shoulders, eyes on the upper third line, generous negative space on the left for overlaid text. Extend the background naturally to fill the wider frame."
+    },
+    {
+      "id": "vertical",
+      "name": "9-16-linkedin-reels",
+      "note": "LinkedIn / reels. Cadrage un peu plus serre, tete dans le tiers superieur.",
+      "aspectRatio": "9:16",
+      "imageSize": "2K",
+      "prompt": "Same person, same face, same outfit, same background environment as the reference. Recompose as a vertical 9:16 frame: head and shoulders centred horizontally, top of the head in the upper fifth of the frame, chest visible at the bottom, background extended naturally above and below."
+    },
+    {
+      "id": "alt-outfit",
+      "name": "tenue-alternative",
+      "note": "Pour varier les videos sans refaire un avatar (utile si tu publies plusieurs fois par semaine).",
+      "aspectRatio": "4:5",
+      "imageSize": "2K",
+      "prompt": "Same person, same face, same hairstyle, same background as the reference. Change only the clothing: a deep forest-green fine-knit sweater with a simple round neckline, no visible jewelry. Keep the same lighting and framing."
+    },
+    {
+      "id": "warm-neutral",
+      "name": "fond-neutre-chaud-16-9",
+      "note": "Fond uni ET horizontal : la version la plus reutilisable pour de l'habillage.",
+      "aspectRatio": "16:9",
+      "imageSize": "2K",
+      "prompt": "Same person, same face, same outfit as the reference. Seamless warm beige studio backdrop (#E3DCD2), horizontal 16:9 composition, subject in the right third, head and shoulders, large clean negative space on the left. Even soft studio lighting, no props."
+    }
+  ]
+}

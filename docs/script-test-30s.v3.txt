@@ -1,0 +1,11 @@
+[curious] Vous avez combien de temps, entre deux clients, pour vous occuper de votre officine ?
+
+[pause]
+
+[thoughtful] Pas le vôtre au comptoir. Celui de votre entreprise. Les commandes, les stocks qui dorment... les patients qui ne reviennent pas.
+
+[matter-of-fact] C'est presque toujours la même réponse : pas assez.
+
+[warm] Alors on ne va pas vous vendre un outil de plus à apprendre. On regarde ce qui vous prend vos soirées, et on l'enlève.
+
+[confident] Trente minutes, sans engagement. Vous verrez vite si ça vaut le coup.

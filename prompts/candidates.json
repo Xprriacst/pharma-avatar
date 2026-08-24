@@ -1,0 +1,35 @@
+{
+  "_doc": "Portraits maîtres (masters). On en génère 4, on en garde UN. Le master sert ensuite de référence image-to-image pour toutes les déclinaisons (prompts/derivatives.json), ce qui garantit que c'est la même personne partout.",
+  "_defaults": {
+    "aspectRatio": "4:5",
+    "imageSize": "2K"
+  },
+  "_negative": "No text, no watermark, no logo, no signature. No exaggerated makeup, no stock-photo grin, no teeth showing. No white lab coat, no medical scrubs, no stethoscope, no caduceus. Hands not visible. No motion blur, no lens flare, no glasses glare or reflections, no harsh specular highlights on skin. No hair strands crossing the face, no hair covering the jawline. Not a 3D render, not an illustration, not AI-plastic skin.",
+  "_common": "Photorealistic editorial portrait photograph, shot on Canon EOS R5, 85mm lens at f/2.0, shallow depth of field. Medium shot: head and shoulders, upper chest visible, body turned slightly (about 15 degrees) but face fully frontal to the camera, eyes looking directly into the lens. Closed-mouth confident smile, relaxed jaw, warm and attentive expression, natural skin texture with visible pores and fine lines. Soft natural window light from the left, gentle fill on the right, no hard shadows across the face. Even lighting on the entire face. Clear separation between subject and background.",
+  "candidates": [
+    {
+      "id": "A",
+      "name": "consultante-terrain",
+      "note": "Le pari par defaut. Lunettes = credibilite, blazer = interlocutrice de chef d'entreprise, decor pharmacie = 'je connais votre monde'.",
+      "prompt": "French woman, 42 years old, shoulder-length dark brown hair with a few natural greys, side part, loosely tucked behind one ear. Wearing a light cream silk blouse under a well-cut navy blazer, no necklace, small simple stud earrings, thin tortoiseshell rectangular glasses. Background: the back-office of a French pharmacy, softly blurred, shelves of white and pale-green medicine boxes, warm neutral tones."
+    },
+    {
+      "id": "B",
+      "name": "proche-sans-lunettes",
+      "note": "Variante plus chaleureuse, sans lunettes. A tester si A parait trop 'commerciale grand compte'.",
+      "prompt": "French woman, 40 years old, dark chestnut hair gathered in a low loose bun, a few strands framing the face, no glasses. Wearing a fine-knit warm grey round-neck sweater, a thin gold chain barely visible at the collar. Warm approachable expression, slight head tilt. Background: a French pharmacy counter area, heavily blurred, warm wood and soft green signage tones, bokeh highlights."
+    },
+    {
+      "id": "C",
+      "name": "senior-fond-neutre",
+      "note": "Plus agee, decor neutre. La plus transposable (site, slides, LinkedIn) car aucun decor a assumer.",
+      "prompt": "French woman, 45 years old, short layered dark brown hair with visible natural greys at the temples. Wearing a soft charcoal blazer over a white shirt with an open collar, no jewelry. Calm, assured, slightly serious expression with a faint smile. Background: seamless warm grey studio backdrop, subtle vignette, no props."
+    },
+    {
+      "id": "D",
+      "name": "digitale-pharmacie-moderne",
+      "note": "La plus jeune, decor pharmacie moderne (automate). Signale 'numerique' plus fort, mais risque de paraitre trop jeune face a un titulaire de 50 ans.",
+      "prompt": "French woman, 38 years old, long dark brown hair worn down and straight, no glasses. Wearing a crisp white shirt under a thin dark taupe cardigan, minimal jewelry. Confident, direct, slightly amused expression. Background: a modern French pharmacy dispensary, blurred, pale grey robotic drawer cabinets and soft LED strip lighting, cool-neutral tones balanced by warm key light on the face."
+    }
+  ]
+}
