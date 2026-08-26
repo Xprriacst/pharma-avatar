@@ -1,8 +1,16 @@
 {
   "_doc": "Declinaisons du master retenu. TOUJOURS lancer avec --ref out/master.png : c'est l'image de reference qui force 'meme personne, meme visage'. Sans --ref, Gemini regenere quelqu'un d'autre.",
   "_common": "Keep the exact same woman as in the reference image: identical face, identical bone structure, identical eye colour, identical hairstyle and hair colour, identical age. Do not restyle, do not beautify, do not change her apparent age. Same photographic treatment: 85mm lens, shallow depth of field, soft natural light from the left, photorealistic skin texture.",
-  "_negative": "No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur.",
+  "_negative": "No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur. No legible text anywhere: no product names, no price labels, no brand names on packaging, no numbers, no garbled or invented lettering on boxes or shelves.",
   "derivatives": [
+    {
+      "id": "master-fix",
+      "name": "recadrage-et-flou-du-master",
+      "note": "A lancer sur un tirage dont le VISAGE est bon mais dont le cadre ou le fond ne le sont pas. Recadre en 4:5, noie le decor, supprime le texte des boites. Retire la phrase sur le coiffage si tu ne veux aucun changement de look.",
+      "aspectRatio": "4:5",
+      "imageSize": "2K",
+      "prompt": "Same person, same face, same glasses, same navy blazer and cream blouse, same pharmacy setting as the reference image. Recompose as a vertical 4:5 portrait: head and shoulders filling the frame, top of the head just below the upper edge, upper chest visible at the bottom, subject centred, face frontal and eyes on the camera. Push the background far out of focus: strong creamy bokeh, shelves and boxes reduced to soft blocks of white, pale green and warm wood, absolutely nothing readable on any packaging. Keep the same lighting direction and the same natural skin texture with its pores and fine lines. Slightly more polished styling: a little more volume and shine in the hair, clear catchlights in both eyes, no glare on the lenses."
+    },
     {
       "id": "plain-bg",
       "name": "fond-uni-gris-chaud",

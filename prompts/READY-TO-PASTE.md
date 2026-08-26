@@ -110,6 +110,19 @@ Dans AI Studio : bouton `+` -> Upload file -> ton master, puis le prompt. Sans l
 jointe, tu obtiendras une autre femme, avec le meme style. C'est l'erreur qui coute
 une demi-journee.
 
+### master-fix — recadrage-et-flou-du-master
+
+> A lancer sur un tirage dont le VISAGE est bon mais dont le cadre ou le fond ne le sont pas. Recadre en 4:5, noie le decor, supprime le texte des boites. Retire la phrase sur le coiffage si tu ne veux aucun changement de look.  
+> Ratio a regler dans l'interface : **4:5**
+
+```
+Keep the exact same woman as in the reference image: identical face, identical bone structure, identical eye colour, identical hairstyle and hair colour, identical age. Do not restyle, do not beautify, do not change her apparent age. Same photographic treatment: 85mm lens, shallow depth of field, soft natural light from the left, photorealistic skin texture.
+
+Same person, same face, same glasses, same navy blazer and cream blouse, same pharmacy setting as the reference image. Recompose as a vertical 4:5 portrait: head and shoulders filling the frame, top of the head just below the upper edge, upper chest visible at the bottom, subject centred, face frontal and eyes on the camera. Push the background far out of focus: strong creamy bokeh, shelves and boxes reduced to soft blocks of white, pale green and warm wood, absolutely nothing readable on any packaging. Keep the same lighting direction and the same natural skin texture with its pores and fine lines. Slightly more polished styling: a little more volume and shine in the hair, clear catchlights in both eyes, no glare on the lenses.
+
+Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur. No legible text anywhere: no product names, no price labels, no brand names on packaging, no numbers, no garbled or invented lettering on boxes or shelves.
+```
+
 ### plain-bg — fond-uni-gris-chaud
 
 > La version passe-partout : slides, site, miniatures, incrustation.  
@@ -120,7 +133,7 @@ Keep the exact same woman as in the reference image: identical face, identical b
 
 Same person, same face, same outfit as the reference. Replace the background with a clean seamless warm grey studio backdrop (#D8D3CC), evenly lit, subtle soft vignette, no props, no texture. Keep the same head size and framing (head and shoulders).
 
-Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur.
+Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur. No legible text anywhere: no product names, no price labels, no brand names on packaging, no numbers, no garbled or invented lettering on boxes or shelves.
 ```
 
 ### wide — 16-9-horizontal
@@ -133,7 +146,7 @@ Keep the exact same woman as in the reference image: identical face, identical b
 
 Same person, same face, same outfit, same background environment as the reference. Recompose as a horizontal 16:9 frame: the subject occupies the right third, head and shoulders, eyes on the upper third line, generous negative space on the left for overlaid text. Extend the background naturally to fill the wider frame.
 
-Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur.
+Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur. No legible text anywhere: no product names, no price labels, no brand names on packaging, no numbers, no garbled or invented lettering on boxes or shelves.
 ```
 
 ### vertical — 9-16-linkedin-reels
@@ -146,7 +159,7 @@ Keep the exact same woman as in the reference image: identical face, identical b
 
 Same person, same face, same outfit, same background environment as the reference. Recompose as a vertical 9:16 frame: head and shoulders centred horizontally, top of the head in the upper fifth of the frame, chest visible at the bottom, background extended naturally above and below.
 
-Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur.
+Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur. No legible text anywhere: no product names, no price labels, no brand names on packaging, no numbers, no garbled or invented lettering on boxes or shelves.
 ```
 
 ### alt-outfit — tenue-alternative
@@ -159,7 +172,7 @@ Keep the exact same woman as in the reference image: identical face, identical b
 
 Same person, same face, same hairstyle, same background as the reference. Change only the clothing: a deep forest-green fine-knit sweater with a simple round neckline, no visible jewelry. Keep the same lighting and framing.
 
-Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur.
+Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur. No legible text anywhere: no product names, no price labels, no brand names on packaging, no numbers, no garbled or invented lettering on boxes or shelves.
 ```
 
 ### warm-neutral — fond-neutre-chaud-16-9
@@ -172,7 +185,7 @@ Keep the exact same woman as in the reference image: identical face, identical b
 
 Same person, same face, same outfit as the reference. Seamless warm beige studio backdrop (#E3DCD2), horizontal 16:9 composition, subject in the right third, head and shoulders, large clean negative space on the left. Even soft studio lighting, no props.
 
-Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur.
+Avoid: No text, no watermark. No change of identity, no different person, no younger or older face. No teeth showing, no exaggerated smile. Hands not visible. No glasses glare, no motion blur. No legible text anywhere: no product names, no price labels, no brand names on packaging, no numbers, no garbled or invented lettering on boxes or shelves.
 ```
 
 ---
