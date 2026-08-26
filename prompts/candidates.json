@@ -8,6 +8,12 @@
   "_common": "Photorealistic editorial portrait photograph, shot on Canon EOS R5, 85mm lens at f/2.0, shallow depth of field. Medium shot: head and shoulders, upper chest visible, body turned slightly (about 15 degrees) but face fully frontal to the camera, eyes looking directly into the lens. Closed-mouth confident smile, relaxed jaw, warm and attentive expression, natural skin texture with visible pores and fine lines. Soft natural window light from the left, gentle fill on the right, no hard shadows across the face. Even lighting on the entire face. Clear separation between subject and background.",
   "candidates": [
     {
+      "id": "A+",
+      "name": "consultante-terrain-soignee",
+      "note": "A, en version photo de magazine. On monte la lumiere, le coiffage, le maquillage et la coupe du blazer. On NE touche PAS a l'age ni a la texture de peau : c'est ce qui la garde credible.",
+      "prompt": "French woman, 42 years old, elegant and photogenic, refined bone structure with defined cheekbones. Shoulder-length dark brown hair with a few natural greys, freshly styled with soft volume and healthy shine, side part, one side loosely tucked behind her ear. Well-groomed natural eyebrows, discreet everyday makeup: subtle neutral eyeshadow, softly defined lashes, muted rose lip. Luminous well-hydrated skin that keeps real pores, fine expression lines around the eyes, and natural facial asymmetry. Wearing an impeccably tailored navy blazer over a light cream silk blouse that catches the light, small gold stud earrings, thin tortoiseshell rectangular glasses. Beauty-grade lighting: large soft key light from the left, gentle fill on the right, subtle rim light separating her hair from the background, clear catchlights in both eyes. Editorial magazine portrait quality, professionally retouched but never airbrushed. Background: the back-office of a French pharmacy, softly blurred, shelves of white and pale-green medicine boxes, warm neutral tones."
+    },
+    {
       "id": "A",
       "name": "consultante-terrain",
       "note": "Le pari par defaut. Lunettes = credibilite, blazer = interlocutrice de chef d'entreprise, decor pharmacie = 'je connais votre monde'.",
