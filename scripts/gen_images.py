@@ -43,8 +43,9 @@ API_HOST = "https://generativelanguage.googleapis.com"
 
 # Nano Banana Pro d'abord (meilleur rendu peau/texte), repli sur le modele GA.
 DEFAULT_MODELS = [
-    "gemini-3-pro-image-preview",
-    "gemini-2.5-flash-image",
+    "gemini-3-pro-image",        # Nano Banana Pro (GA) : le meilleur sur la peau et le regard
+    "gemini-3.1-flash-image",    # Nano Banana 2 : plus rapide, bon pour iterer
+    "gemini-2.5-flash-image",    # repli historique
 ]
 
 ROOT = Path(__file__).resolve().parent.parent

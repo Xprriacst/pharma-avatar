@@ -62,43 +62,57 @@ de tourner sans.
 
 ## Choix de modèle
 
-`gemini-3-pro-image-preview` (Nano Banana Pro) par défaut, repli automatique sur
-`gemini-2.5-flash-image` si la preview n'est pas ouverte sur ta clé. Forçable avec
-`--model`. Chaque image est écrite avec un `.json` voisin contenant le prompt exact, le
-modèle et les paramètres — de quoi reproduire ou ajuster six mois plus tard.
+`gemini-3-pro-image` (Nano Banana Pro) par défaut, repli automatique sur
+`gemini-3.1-flash-image` puis `gemini-2.5-flash-image`. Forçable avec `--model`. Chaque
+image est écrite avec un `.json` voisin contenant le prompt exact, le modèle et les
+paramètres — de quoi reproduire ou ajuster six mois plus tard.
+
+**Si tu vois `429 · free_tier_requests, limit: 0`** : ce n'est pas un rate limit, c'est
+l'absence de facturation sur le projet. Voir la section suivante.
 
 ---
 
 ## Ce que je peux faire moi-même, et ce qui me bloque
 
-Testé hôte par hôte depuis la session Claude Code où ce dépôt a été écrit :
+Testé depuis la session Claude Code, avec une clé fournie :
 
-| Hôte | État | Détail |
-|---|---|---|
-| `generativelanguage.googleapis.com` | **joignable** | répond `403 · Method doesn't allow unregistered callers` — c'est Google qui réclame une clé, pas le proxy qui bloque |
-| `api.elevenlabs.io` | bloqué | `CONNECT tunnel failed` au niveau du proxy d'egress |
-| `api.heygen.com` | bloqué | idem |
+| Vérification | Résultat |
+|---|---|
+| `generativelanguage.googleapis.com` joignable | oui |
+| Clé API valide | oui |
+| Génération de **texte** (`gemini-3.6-flash`) | fonctionne |
+| Génération d'**images** (tous modèles) | **refusée** — `free_tier_requests, limit: 0` |
+| `api.elevenlabs.io` / `api.heygen.com` | bloqués par le proxy d'egress |
 
-Autrement dit : **pour Gemini, il ne me manque que la clé.** Le réseau passe déjà.
+### Le blocage actuel : la facturation Gemini
 
-### Pour que je génère les images moi-même
+Les modèles image ont un quota gratuit de **zéro**. Ce n'est pas un quota épuisé qui se
+recharge, c'est une absence d'allocation : la génération d'images n'existe pas sur le
+free tier. Le message est le même sur les six modèles image, du Pro au Flash Lite.
 
-Ajouter `GEMINI_API_KEY` aux variables d'environnement Claude Code
-(Settings → Environments → variables). Rien d'autre à débloquer. À la session suivante
-je lance la chaîne complète ici : les quatre candidates, un coup d'œil, j'écarte les
-ratés (reflets sur les lunettes, dents visibles, mains rentrées dans le cadre), je
-relance sur les prompts qui méritent un second tour, je te rends les fichiers et le
-`check_photo.py` de chacun.
+Le correctif est côté Google, pas côté code : **activer la facturation** sur le projet
+Google Cloud rattaché à la clé, via [aistudio.google.com](https://aistudio.google.com/)
+→ Get API key → Set up billing. Le texte continuera de tourner en gratuit ; seules les
+images sont facturées, à l'image générée.
 
-Pour ElevenLabs et HeyGen il faudra en plus autoriser `api.elevenlabs.io`,
-`api.heygen.com` et `upload.heygen.com` dans les domaines de l'environnement — ou faire
-ces deux étapes à l'interface, ce qui reste de toute façon recommandé pour la première
-vidéo.
+Une fois la facturation active, la chaîne part sans rien changer : les six modèles image
+sont déjà visibles par la clé (`gen_images.py models` les liste).
 
-### Ou tu lances toi-même
+### Modèles disponibles au 26/08/2026
 
-Les trois lignes de l'étape 1 ci-dessus, chez toi. Trente secondes, et tu gardes la main
-sur la facturation.
+```
+gemini-3-pro-image              Nano Banana Pro        <- défaut
+gemini-3.1-flash-image          Nano Banana 2
+gemini-3.1-flash-lite-image     Nano Banana 2 Lite
+gemini-3-pro-image-preview      Nano Banana Pro (preview)
+gemini-3.1-flash-image-preview  Nano Banana 2 (preview)
+gemini-2.5-flash-image          Nano Banana
+```
+
+### Une fois la facturation active
+
+Deux options : tu lances les commandes ci-dessus chez toi, ou tu me redonnes une clé et
+je génère ici — le réseau passe déjà, il ne manquait que le droit de facturer.
 
 Dans les deux cas, **le choix du visage reste le tien**. C'est le seul arbitrage de toute
 la chaîne qu'une machine ne doit pas faire à ta place : tu connais tes titulaires, moi je
