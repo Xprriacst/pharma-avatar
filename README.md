@@ -81,7 +81,8 @@ Testé depuis la session Claude Code, avec une clé fournie :
 | `generativelanguage.googleapis.com` joignable | oui |
 | Clé API valide | oui |
 | Génération de **texte** (`gemini-3.6-flash`) | fonctionne |
-| Génération d'**images** (tous modèles) | **refusée** — `free_tier_requests, limit: 0` |
+| Génération d'**images**, 1er test | refusée — `free_tier_requests, limit: 0` (pas de facturation) |
+| Génération d'**images**, 2e test | refusée — `Your prepayment credits are depleted` (facturation active, solde à zéro) |
 | `api.elevenlabs.io` / `api.heygen.com` | bloqués par le proxy d'egress |
 
 ### Le blocage actuel : la facturation Gemini
@@ -90,10 +91,21 @@ Les modèles image ont un quota gratuit de **zéro**. Ce n'est pas un quota épu
 recharge, c'est une absence d'allocation : la génération d'images n'existe pas sur le
 free tier. Le message est le même sur les six modèles image, du Pro au Flash Lite.
 
-Le correctif est côté Google, pas côté code : **activer la facturation** sur le projet
-Google Cloud rattaché à la clé, via [aistudio.google.com](https://aistudio.google.com/)
-→ Get API key → Set up billing. Le texte continuera de tourner en gratuit ; seules les
-images sont facturées, à l'image générée.
+Le correctif est côté Google, pas côté code, et il s'est fait en deux temps :
+
+1. **activer la facturation** sur le projet — fait, le message d'erreur a changé ;
+2. **recharger le solde prépayé** sur [ai.studio/projects](https://ai.studio/projects) —
+   c'est le blocage actuel. Le compte est en mode prépayé et le solde est à zéro.
+
+Le texte continue de tourner en gratuit ; seules les images sont facturées, à l'image
+générée.
+
+### Une image reçue en conversation n'est pas une image sur le disque
+
+Un tirage envoyé dans le fil de discussion n'atterrit dans aucun fichier du container.
+Les déclinaisons ont besoin du master **en fichier** pour l'attacher à la requête. Donc
+tant que le master vit seulement dans la conversation, `--ref` ne peut pas le viser :
+il faut le générer ou le déposer côté machine qui exécute le script.
 
 Une fois la facturation active, la chaîne part sans rien changer : les six modèles image
 sont déjà visibles par la clé (`gen_images.py models` les liste).
